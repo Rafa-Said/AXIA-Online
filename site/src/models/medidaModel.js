@@ -77,8 +77,8 @@ function buscarsktTemp(idAquario, limite_linhas) {
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql =`SELECT temperatura, dataHora, processador
-                         FROM [dbo].[LeituraKotlin];
+        instrucaoSql =`SELECT TOP 10 temperatura, FORMAT(dataHora, 'dd/MM/yyyy HH:ss') as 'dataHora', processador
+                                FROM [dbo].[LeituraKotlin];
         `
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
@@ -229,7 +229,7 @@ function buscartotalRam() {
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql =`SELECT AVG(RamTotal) AS RamTotal FROM [dbo].[Leitura_Ram] WHERE fkTorre = 6 and fkEmpresa = 7;`
+        instrucaoSql =`SELECT RamTotal AS RamTotal FROM [dbo].[Leitura_Ram] WHERE fkTorre = 6 and fkEmpresa = 7;`
         
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
 
@@ -295,7 +295,7 @@ function buscarTorre2Total() {
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql =`SELECT AVG(RamTotal) AS RamTotal FROM [dbo].[Leitura_Ram] WHERE fkTorre = 5 and fkEmpresa = 5;`
+        instrucaoSql =`SELECT RamTotal AS RamTotal FROM [dbo].[Leitura_Ram] WHERE fkTorre = 5 and fkEmpresa = 5;`
         
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
 

@@ -46,25 +46,25 @@
           <li>
             <a href="dashboardIsa.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Isabela Hantke</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Armazenamento Disco</p>
             </a>
           </li>
           <li class="active">
             <a href="../dash-nova/dashboard_vms.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> RAFAELA DIAS</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Memória RAM</p>
             </a>
           </li>
           <li>
             <a href="../dash-nova/dashboardVitor.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Vitor Macauba</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Velocidade Internet</p>
             </a>
           </li>
           <li>
             <a href="../dash-nova/dashboardVe.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Verônica Zibordi</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Temperatura</p>
             </a>
           </li>
           <li>
@@ -101,7 +101,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand">Gráfico - Memória RAM - Torre 1</a>
+            <a class="navbar-brand">Gráficos Memória RAM - Torre 1 (Últimas medidas)</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
             aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -141,10 +141,12 @@
                     <div style="display: flex; margin-left: 5vh; margin-bottom: 2vh;">
                       <img src="../assets/img/disponivel.png" alt="disponivel" width="70px">
                       <div style="font-size: 14px; text-align: center;">
-                        <b>&nbsp; Memória Disponível</b>
+                        <b>&nbsp; RAM Disponível</b>
                         <br>
                         <span id="mvnow" style="font-size: 4vh;">0.0</span> GB
-                        <button onclick="obterDados()" style="width:auto; height: auto; background-color: transparent;"><img src="../assets/img/Refresh_icon.png" alt="refresh" width="25px"></button>
+                        <button onclick="obterDados()"
+                          style="width:auto; height: auto; background-color: transparent;"><img
+                            src="../assets/img/Refresh_icon.png" alt="refresh" width="25px"></button>
                       </div>
                     </div>
                   </div>
@@ -159,7 +161,9 @@
                         <b>&nbsp; RAM Total</b>
                         <br> &nbsp;&nbsp;
                         <span id="ramtotal" style="font-size: 4vh;">0.0</span> GB
-                        <button onclick="obterDados2()" style="width:auto; height: auto; background-color: transparent;"><img src="../assets/img/Refresh_icon.png" alt="refresh" width="25px"></button>
+                        <button onclick="obterDados2()"
+                          style="width:auto; height: auto; background-color: transparent;"><img
+                            src="../assets/img/Refresh_icon.png" alt="refresh" width="25px"></button>
                       </div>
                     </div>
                     <!-- <div style="text-align:center;">       
@@ -177,10 +181,12 @@
                     <div style="display: flex; margin-bottom: 2vh;">
                       <img src="../assets/img/total.png" alt="disponivel" width="70px">
                       <div style="font-size: 14px; text-align: center;">
-                        <b>&nbsp; Em Uso</b>
+                        <b>&nbsp; RAM Em Uso</b>
                         <br> &nbsp;&nbsp;
                         <span id="ramusanow" style="font-size: 3.5vh;">0.0</span> GB
-                        <button onclick="obterDados1()" style="width:auto; height: auto; background-color: transparent;"><img src="../assets/img/Refresh_icon.png" alt="refresh" width="25px"></button>
+                        <button onclick="obterDados1()"
+                          style="width:auto; height: auto; background-color: transparent;"><img
+                            src="../assets/img/Refresh_icon.png" alt="refresh" width="25px"></button>
                       </div>
                     </div>
                     <!-- <div style="text-align:center;">
@@ -196,53 +202,98 @@
           </div>
         </div>
         <h5 class="card-title">
-        </button><a style="color: #000000;" href="../dash-nova/dashboard_vms.html"><button style="width:70px; height: 30px; font-size: 10px;">Torre 1</a></button>
-        </button><a style="color: #000000;" href="../dash-nova/dashboard_vms1.html"><button style="width:70px; height: 30px; font-size: 10px;">Torre 2</a></button>
-        </h5> 
+          </button><a style="color: #000000;" href="../dash-nova/dashboard_vms.html"><button
+              style="width:70px; height: 30px; font-size: 10px;">Torre 1</a></button>
+          </button><a style="color: #000000;" href="../dash-nova/dashboard_vms1.html"><button
+              style="width:70px; height: 30px; font-size: 10px;">Torre 2</a></button>
+        </h5>
         <div class="row">
-         <div class="col-md-12">
+          <div class="col-md-12">
             <div class="card">
-          <div class="chart">
-              <canvas id="chartVM" width="400" height="100"></canvas>
-          </div>  
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-      <!-- perfil -->
-      <div class="modal-containerD" id="modalPerfil_container">
-        <div class="modalD">
-
-          <div class="login-content">
-            <br> <br>
-            <div class="formLogin">
-              <div class="escrita-usuario">
-                <h1>Perfil</h1>
+              <div class="chart">
+                <canvas id="chartVM" width="400" height="100"></canvas>
               </div>
-              <br>
-              <div class="perfil" style="color: #000091;">
-                <h2>User:</h2>
-                <input style="border-radius:10px;" id="inpNomePerfil" class="in_config" name="Nome" type="text"
-                  disabled>
-              </div>
-
-              <div class="perfil" style="color: #000091;">
-                <h2>E-mail:</h2>
-                <input style="border-radius:10px;" id="inpEmailPerfil" class="in_config" name="Email" type="text"
-                  disabled>
-              </div>
-                <a href="../../index.html">
-                  <img src="../assets/img/exit.png" alt="exit" width="30" height="30">
-                  <!-- <i class="nc-icon nc-user-run"></i> -->
-                  <b>Sair</b>
-                </a>
             </div>
           </div>
         </div>
-        <button class="button1DG1" id="closeMU1"><span>X</span></button>
       </div>
     </div>
+
+    <!--Alerta RAM Disponível-->
+    <div class="modal-containerD" id="Alerta_Disponivel">
+      <div class="modalID_metricas" style="height: 12rem;">
+
+        <div class="login-content">
+          <br> <br>
+          <div class="formLogin">
+            <div class="escrita-metrica">
+              <h2 style="margin: 0; color: yellow;">ALERTA</h2>
+            </div>
+            <p style="font-size: 18px; margin: 0; padding-top: 20px; color:#fff;">"RAM Disponível" entrou em estado de
+              alerta!</p>
+            <br>
+            <div class="perfil" style="color: #ffffff; font-size: 6px; padding-bottom: 10px; margin: 0;">
+              <h1 id="closeMUAlertaDisponivel" style="cursor: pointer; margin: 0;">Fechar</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Critico RAM Disponível-->
+    <div class="modal-containerD" id="Critico_Disponivel">
+      <div class="modalID_metricas" style="height:12rem;">
+
+        <div class="login-content">
+          <br> <br>
+          <div class="formLogin">
+            <div class="escrita-metrica">
+              <h2 style=" margin: 0; color: red;">CRÍTICO</h2>
+            </div>
+            <p style="font-size: 18px; margin: 0; padding-top: 20px; color:#fff;">"RAM Disponível" entrou em estado
+              crítico!</p>
+
+            <br>
+            <div class="perfil" style="color: #ffffff; font-size: 6px; padding-bottom: 10px; margin: 0;">
+              <h1 id="closeMUCriticoDisponivel" style="cursor: pointer; margin: 0;">Fechar</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- perfil -->
+    <div class="modal-containerD" id="modalPerfil_container">
+      <div class="modalD">
+
+        <div class="login-content">
+          <br> <br>
+          <div class="formLogin">
+            <div class="escrita-usuario">
+              <h1>Perfil</h1>
+            </div>
+            <br>
+            <div class="perfil" style="color: #000091;">
+              <h2>User:</h2>
+              <input style="border-radius:10px;" id="inpNomePerfil" class="in_config" name="Nome" type="text" disabled>
+            </div>
+
+            <div class="perfil" style="color: #000091;">
+              <h2>E-mail:</h2>
+              <input style="border-radius:10px;" id="inpEmailPerfil" class="in_config" name="Email" type="text"
+                disabled>
+            </div>
+            <a href="../../index.html">
+              <img src="../assets/img/exit.png" alt="exit" width="30" height="30">
+              <!-- <i class="nc-icon nc-user-run"></i> -->
+              <b>Sair</b>
+            </a>
+          </div>
+        </div>
+      </div>
+      <button class="button1DG1" id="closeMU1"><span>X</span></button>
+    </div>
+  </div>
   </div>
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
@@ -259,31 +310,31 @@
   <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
   <script>
     // MÉDIA DE USO DA MEMÓRIA VIRTUAL - API PYTHON
-    function obterDados(){
-    
+    function obterDados() {
+
       fetch(`/medidas/vm`, { cache: 'no-store' }).then(function (response) {
-          if (response.ok) {
-            response.json().then(function (resposta) {
-              console.log(`Dados recebidos!!!!!!!!!!!!!: ${JSON.stringify(resposta)}`);  
-              const teste = Number(resposta[0].RamAvailable)
-              const teste1 = teste.toFixed(2)
-              mvnow.innerHTML = teste1
-            });
-          } else {
-            console.error('Nenhum dado encontrado ou erro na API');
-          }
-        })
-          .catch(function (error) {
-            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-          });
-    }
-    // MÉDIA DE USO DA RAM - API PYTHON
-    function obterDados1(){
-    
-    fetch(`/medidas/ramuso`, { cache: 'no-store' }).then(function (response) {
         if (response.ok) {
           response.json().then(function (resposta) {
-            console.log(`Dados recebidos!!!!!!!!!!!!!: ${JSON.stringify(resposta)}`);  
+            console.log(`Dados recebidos!!!!!!!!!!!!!: ${JSON.stringify(resposta)}`);
+            const teste = Number(resposta[0].RamAvailable)
+            const teste1 = teste.toFixed(2)
+            mvnow.innerHTML = teste1
+          });
+        } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+        .catch(function (error) {
+          console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+    }
+    // MÉDIA DE USO DA RAM - API PYTHON
+    function obterDados1() {
+
+      fetch(`/medidas/ramuso`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+          response.json().then(function (resposta) {
+            console.log(`Dados recebidos!!!!!!!!!!!!!: ${JSON.stringify(resposta)}`);
             const teste = Number(resposta[0].RamEmUso)
             const teste1 = teste.toFixed(2)
             ramusanow.innerHTML = teste1
@@ -297,12 +348,12 @@
         });
     }
 
-    function obterDados2(){
-    
-    fetch(`/medidas/ramtotal`, { cache: 'no-store' }).then(function (response) {
+    function obterDados2() {
+
+      fetch(`/medidas/ramtotal`, { cache: 'no-store' }).then(function (response) {
         if (response.ok) {
           response.json().then(function (resposta) {
-            console.log(`Dados recebidos!!!!!!!!!!!!!: ${JSON.stringify(resposta)}`);  
+            console.log(`Dados recebidos!!!!!!!!!!!!!: ${JSON.stringify(resposta)}`);
             const teste = Number(resposta[0].RamTotal)
             const teste1 = teste.toFixed(2)
             ramtotal.innerHTML = teste1
@@ -315,48 +366,48 @@
           console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
         });
     }
-</script>
+  </script>
 
-<script>
+  <script>
 
-  demo = {
-    initPickColor: function () {
-      $('.pick-class-label').click(function () {
-        var new_class = $(this).attr('new-class');
-        var old_class = $('#display-buttons').attr('data-class');
-        var display_div = $('#display-buttons');
-        if (display_div.length) {
-          var display_buttons = display_div.find('.btn');
-          display_buttons.removeClass(old_class);
-          display_buttons.addClass(new_class);
-          display_div.attr('data-class', new_class);
+    demo = {
+      initPickColor: function () {
+        $('.pick-class-label').click(function () {
+          var new_class = $(this).attr('new-class');
+          var old_class = $('#display-buttons').attr('data-class');
+          var display_div = $('#display-buttons');
+          if (display_div.length) {
+            var display_buttons = display_div.find('.btn');
+            display_buttons.removeClass(old_class);
+            display_buttons.addClass(new_class);
+            display_div.attr('data-class', new_class);
+          }
+        });
+      },
+
+      ChartsTodos: function (dados) {
+
+        const usovirtual = []
+        const ramusado = []
+        const data_agr = []
+
+        for (let i in dados) {
+
+          usovirtual.push(dados[i].RamAvailable)
+          ramusado.push(dados[i].RamEmUso)
+          data_agr.push(dados[i].horaRam)
         }
-      });
-    },
 
-    ChartsTodos: function (dados) {
+        chartColor = "#FFFFFF";
 
-    const usovirtual = []
-    const ramusado = []
-    const data_agr = []
+        ctx = document.getElementById('chartVM').getContext("2d");
 
-    for (let i in dados) {
+        return new Chart(ctx, {
+          type: 'line',
 
-    usovirtual.push(dados[i].RamAvailable) 
-    ramusado.push(dados[i].RamEmUso)
-    data_agr.push(dados[i].horaRam) 
-}
-
-      chartColor = "#FFFFFF";
-
-      ctx = document.getElementById('chartVM').getContext("2d");
-
-      return new Chart(ctx, {
-        type: 'line',
-
-        data: {
-          labels: data_agr,
-          datasets: [{
+          data: {
+            labels: data_agr,
+            datasets: [{
               borderColor: "#006666",
               // backgroundColor: "#a45400",
               // backgroundColor: ['rgba(3, 113, 226,0.5)'],
@@ -376,129 +427,198 @@
               borderWidth: 2,
               data: usovirtual,
               fill: true
+            },
+            ]
           },
-          ]
-        },
-        options: {
-          legend: {
-            display: true
-          },
+          options: {
+            legend: {
+              display: true
+            },
 
-          tooltips: {
-            enabled: true
-          },
+            tooltips: {
+              enabled: true
+            },
 
-          scales: {
+            scales: {
 
-            yAxes: [{
+              yAxes: [{
 
-              ticks: {
-                fontColor: "#9f9f9f",
-                beginAtZero: false,
-                // maxTicksLimit: 5,
-                suggestedMin: 0,
-                // suggestedMax: 10
-                //padding: 20
-              },
-              gridLines: {
-                drawBorder: false,
-                zeroLineColor: "#ccc",
-                color: 'rgba(255,255,255,0.05)'
-              }
+                ticks: {
+                  fontColor: "#9f9f9f",
+                  beginAtZero: false,
+                  // maxTicksLimit: 5,
+                  suggestedMin: 0,
+                  // suggestedMax: 10
+                  //padding: 20
+                },
+                gridLines: {
+                  drawBorder: false,
+                  zeroLineColor: "#ccc",
+                  color: 'rgba(255,255,255,0.05)'
+                }
 
-            }],
+              }],
 
-            xAxes: [{
-              // barPercentage: 1.6,
-              gridLines: {
-                drawBorder: false,
-                // color: 'rgba(255,255,255,0.1)',
-                zeroLineColor: "transparent",
-                display: false,
-              },
-              // ticks: {
-              //   // padding: 20,
-              //   // fontColor: "#9f9f9f"
-              // }
-            }]
-          },
+              xAxes: [{
+                // barPercentage: 1.6,
+                gridLines: {
+                  drawBorder: false,
+                  // color: 'rgba(255,255,255,0.1)',
+                  zeroLineColor: "transparent",
+                  display: false,
+                },
+                // ticks: {
+                //   // padding: 20,
+                //   // fontColor: "#9f9f9f"
+                // }
+              }]
+            },
+          }
+        });
+      },
+    }
+
+    let graficoTodos;
+
+    $(document).ready(function () {
+      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+
+      fetch("/medidas/ultimas-med/", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
         }
+      }).then(function (resposta) {
+
+        resposta.json()
+          .then(data => {
+            console.log(data)
+            const data_reverse = data.reverse()
+
+            graficoTodos = demo.ChartsTodos(data_reverse);
+
+            setInterval(() => {
+              atualizarGraficos()
+            }, 11000)
+          })
+
+
+      }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+
       });
-    },
-  }
-
-  let graficoTodos;
-
-  $(document).ready(function () {
-    // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-
-    fetch("/medidas/ultimas-med/", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }).then(function (resposta) {
-
-      resposta.json()
-        .then(data => {
-          console.log(data)
-          const data_reverse = data.reverse()
-
-          graficoTodos = demo.ChartsTodos(data_reverse);
-
-          setInterval(() => {
-            atualizarGraficos()
-          }, 20000)
-        })
-
-
-    }).catch(function (resposta) {
-      console.log(`#ERRO: ${resposta}`);
-
     });
-  });
 
-  function atualizarGraficos() {
+    function atualizarGraficos() {
 
-    fetch("/medidas/ultimas-med/", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }).then(function (resposta) {
-
-
-      resposta.json()
-        .then(data => {
-
-          graficoTodos.data.datasets[0].data.shift()
-          graficoTodos.data.datasets[1].data.shift()
-          graficoTodos.data.labels.shift();
+      fetch("/medidas/ultimas-med/", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(function (resposta) {
 
 
-          const data_reverse = data.reverse()
+        resposta.json()
+          .then(data => {
 
-          graficoTodos.data.datasets[0].data.push(data_reverse[data_reverse.length - 1].RamEmUso)
-
-          graficoTodos.data.datasets[1].data.push(data_reverse[data_reverse.length - 1].RamAvailable)
-
-          graficoTodos.data.labels.push(data_reverse[data_reverse.length - 1].horaRam)
-
-          graficoTodos.update()
+            graficoTodos.data.datasets[0].data.shift()
+            graficoTodos.data.datasets[1].data.shift()
+            graficoTodos.data.labels.shift();
 
 
-        })
+            const data_reverse = data.reverse()
 
-    }).catch(function (resposta) {
-      console.log(`#ERRO: ${resposta}`);
+            graficoTodos.data.datasets[0].data.push(data_reverse[data_reverse.length - 1].RamEmUso)
 
-    });
-  }
+            graficoTodos.data.datasets[1].data.push(data_reverse[data_reverse.length - 1].RamAvailable)
 
-</script>
+            graficoTodos.data.labels.push(data_reverse[data_reverse.length - 1].horaRam)
+
+            graficoTodos.update()
+
+            // ADICIONANDO MÉTRICA DE ALERTA 
+
+            let metricaRamDisponivel = data_reverse[data_reverse.length - 1].RamAvailable
+
+            let metrica
+            let frase
+            let componente
+
+            const alerta_disponivel = document.getElementById('Alerta_Disponivel');
+            const critico_disponivel = document.getElementById('Critico_Disponivel');
+
+            const closeMUAlertaDisponivel = document.getElementById('closeMUAlertaDisponivel');
+            const closeMUCriticoDisponivel = document.getElementById('closeMUCriticoDisponivel');
+
+
+            closeMUAlertaDisponivel.addEventListener('click', () => {
+              alerta_disponivel.classList.remove('show');
+            });
+            closeMUCriticoDisponivel.addEventListener('click', () => {
+              critico_disponivel.classList.remove('show');
+            });
+
+            let estadoRamAvailable = document.getElementById('estado_RamDisponivel');
+
+            // Alertas RAM DISPONIVEL
+            if (metricaRamDisponivel > 10.0 && metricaRamDisponivel <= 12.0) {
+              metrica = metricaRamDisponivel
+              componente = "RAM Disponível"
+              frase = "Rafaela, a ram disponivel está em alerta devido ao alto uso deste componente!"
+
+              alerta_disponivel.classList.add('show');
+
+              alertas(nomeFunc, emailFunc, metrica, componente, frase)
+
+            } else if (metricaRamDisponivel > 15.0) {
+              metrica = metricaRamDisponivel
+              componente = "RAM Disponivel"
+              frase = "Rafaela, a ram disponível está em estado crítico!"
+
+              critico_disponivel.classList.add('show');
+
+              alertas(nomeFunc, emailFunc, metrica, componente, frase)
+            }
+
+          })
+
+      }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+
+      });
+    }
+
+  </script>
 </body>
+
 </html>
-<script> 
+
+<script>
+  nomeFunc = sessionStorage.NOME_USUARIO;
+  emailFunc = sessionStorage.EMAIL_USUARIO;
+
+  function alertas(nomeFunc, emailFunc, metrica, componente, frase) {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        accept: 'application/json',
+        "content-type": "application/json",
+        Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyIjp7ImlkIjozMDIyMDQ2NjIsImVtYWlsIjoiYXhpYXBpcHNsYWNrQG91dGxvb2suY29tIiwiYXBwbGljYXRpb24iOjMwMDIxNTI1NX19.v9Yjr79dG0H_xs4swMRSwXGu3EN39veSKDh_36tQ6VTBbL2qID4nitOUaYe2_FQMH9aae4YVfAS1JBb2tdJf9w',
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        query: `mutation {           createCard(input: {             pipe_id:302832887,             title: "Card",             fields_attributes:[               {field_id: "texto_curto", field_value: "${nomeFunc}"},  {field_id: "copy_of_nome", field_value: "${emailFunc}"}, {field_id: "copy_of_email_1", field_value: "${componente}"},{field_id: "copy_of_email", field_value: " ${frase}: ${metrica}"}             ],           }) {               card {                 title               }             }           }`
+      })
+    };
+    fetch('https://api.pipefy.com/graphql', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
+  } 
+</script>
+<script>
   b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
   inpNomePerfil.value = sessionStorage.NOME_USUARIO;
   inpEmailPerfil.value = sessionStorage.EMAIL_USUARIO;

@@ -45,26 +45,26 @@
           <li class="active">
             <a href="dashboardIsa.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Isabela Hantke</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Armazenamento Disco</p>
             </a>
           </li>
           <li>
             <a href="../dash-nova/dashboard_vms.html">
               <!-- Adicionei apenas o caminho para ter ligação entre as páginas -->
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Rafaela Dias</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Memória RAM</p>
             </a>
           </li>
           <li>
             <a href="../dash-nova/dashboardVitor.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Vitor Macauba</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Velocidade Internet</p>
             </a>
           </li>
           <li>
             <a href="../dash-nova/dashboardVe.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Verônica Zibordi</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Temperatura</p>
             </a>
           </li>
           <li>
@@ -94,7 +94,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand">Projeto Individual - Isabela Hantke</a>
+            <a class="navbar-brand">Gráficos Armazenamento do Disco (Tempo Real)</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
             aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -148,7 +148,7 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  Memória disponível do servidor
+                  Disco disponível (TB)
                 </div>
               </div>
             </div>
@@ -173,7 +173,7 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  Memória usada do disco
+                  Disco usado (TB)
                 </div>
               </div>
             </div>
@@ -197,7 +197,7 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  Memória total do disco
+                  Disco total (TB)
                 </div>
               </div>
             </div>
@@ -214,8 +214,8 @@
                 <div class="text-right">
                   <button id="open-modal-metrica" class="btn_metrica">i</button>
                 </div>
-                <h5 class="card-title">Espaço do disco disponível e usado</h5>
-                <p class="card-category">Em tempo real</p>
+                <!-- <h5 class="card-title">Espaço do disco disponível e usado</h5> -->
+                <!-- <p class="card-category">Em tempo real</p> -->
 
               </div>
               <div class="card-body ">
@@ -266,33 +266,51 @@
         </div>
       </div>
 
-      <!-- Métricas-->
-      <div class="modal-containerD" id="modalMetrica_container">
-        <div class="modalD" style="height:22rem; border: 6px solid rgb(82, 78, 78);">
+      <!-- Métricas -->
+      <div class="modal-containerD" id="Metricas_container">
+        <div class="modalID_metricas" style="height:20rem;">
 
           <div class="login-content">
             <br> <br>
             <div class="formLogin">
-              <div class="escrita-usuario">
-                <h1 style="padding: 0; margin:0;">Métricas</h1>
+              <div class="escrita-metrica">
+                <h2 style=" margin: 0; color: #ffffff;">Métricas</h2>
               </div>
-              <br>
-              <div class="perfil" style="color: rgb(17, 28, 178);">
-                <h3 style="padding: 0; margin:0;">Normal: Entre 10% e 55%</h3>
-                <h3 style="padding: 20px 0; margin:0;">Alerta: 55% até 75% </h3>
-                <h3 style="padding: 0; margin:0;">Crítico: A partir de 75% </h3>
-              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Ideal</th>
+                    <th scope="col">Alerta</th>
+                    <th scope="col">Crítico</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Disco Disponível</th>
+                    <td>+30%</td>
+                    <td>55% a 75%</td>
+                    <td>-75%</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Disco Usado</th>
+                    <td>-55%</td>
+                    <td>55% a 75%</td>
+                    <td>+75%</td>
+                  </tr>
+                </tbody>
+              </table>
 
-              <div id="closeMU2" class="perfil"
-                style="color: #000091; cursor: pointer; padding: 10px 0 0 0; font-size: 4px;">
-                <h1>Fechar</h1>
+              <br>
+              <div class="perfil" style="color: #ffffff; font-size: 6px; padding-bottom: 10px; margin: 0;">
+                <h1 id="closeMU2" style="cursor: pointer; margin: 0;">Fechar</h1>
               </div>
 
             </div>
           </div>
         </div>
-
       </div>
+
       <!-- perfil -->
       <div class="modal-containerD" id="modalPerfil_container">
         <div class="modalD">
@@ -430,7 +448,7 @@
 
         console.log(dados);
 
-        for (let i in dados) {
+        for (let i in dados) {0
 
           // porcentagem_cpu.push(dados[i].PorcentCPU)
           UsoDisc.push(dados[i].UsoDiscoR)
@@ -538,7 +556,7 @@
 
             setInterval(() => {
               atualizarGraficos()
-            }, 10000)
+            }, 11000)
           })
 
 
@@ -668,7 +686,7 @@
   const openMU1 = document.getElementById('open-modal-Perfil');
   const openMU2 = document.getElementById('open-modal-metrica');
   const modal_container1 = document.getElementById('modalPerfil_container');
-  const modal_container2 = document.getElementById('modalMetrica_container');
+  const modal_container2 = document.getElementById('Metricas_container');
   const closeMU1 = document.getElementById('closeMU1');
   const closeMU2 = document.getElementById('closeMU2');
 

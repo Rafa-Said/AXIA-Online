@@ -1,17 +1,3 @@
-<!--
-=========================================================
-* Paper Dashboard 2 - v2.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-2
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!-- Verônica Zibordi- Projeto individual- capturando os dados da temperatura-->
 
 <!DOCTYPE html>
@@ -60,25 +46,25 @@ Coded by www.creative-tim.com
           <li>
             <a href="dashboardIsa.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Isabela Hantke</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Armazenamento Disco</p>
             </a>
           </li>
           <li>
             <a href="../dash-nova/dashboard_vms.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Rafaela Dias</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Memória RAM</p>
             </a>
           </li>
           <li>
             <a href="../dash-nova/dashboardVitor.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Vitor Macauba</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Velocidade Internet</p>
             </a>
           </li>
           <li class="active">
             <a href="../dash-nova/dashboardVe.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Verônica Zibordi</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Temperatura</p>
             </a>
           </li>
           <li>
@@ -108,7 +94,7 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand">Gráfico - Temperatura - Servidor 1</a>
+            <a class="navbar-brand">Gráficos Temperatura - Servidor 1 (Tempo Real)</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
             aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -143,8 +129,8 @@ Coded by www.creative-tim.com
       
       <!-- End Navbar -->
       <div class="content">
-        <a style="color: #ffffff; font-size: 15px;" href="../dash-nova/dashboardVe.html"><button style="width:75px; height: 30px; font-size: 10px; background-color: #cd9a0e;">Servidor 1</a></button>
-        <a style="color: #ffffff; font-size: 15px;" href="../dash-nova/dashboardVe2.html"><button style="width:75px; height: 30px; font-size: 10px; background-color: #cd9a0e;">Servidor 2</a></button>
+        <a style="color: #ffffff; font-size: 15px;" href="../dash-nova/dashboardVe.html"><button style="width:82px; height: 30px; font-size: 10px; background-color: #cd9a0e; border-radius: 15px;">Servidor 1</a></button>
+        <a style="color: #ffffff; font-size: 15px;" href="../dash-nova/dashboardVe2.html"><button style="width:82px; height: 30px; font-size: 10px; background-color: #cd9a0e; border-radius: 15px;">Servidor 2</a></button>
         <div class="card card-stats" style="margin-top: 15px;">
           <div class="card-body">
             <div class="row">
@@ -275,14 +261,12 @@ Coded by www.creative-tim.com
                 <div class="text-right">
                   <button id="open-modal-metrica" class="btn_metrica">i</button>
                 </div>
-                <h5 class="card-title" style="color: #cd9a0e">Temperatura do processador</h5>
-                <p class="card-category">Em tempo real</p>
+                <!-- <h5 class="card-title" style="color: #cd9a0e">Temperatura do processador</h5>
+                <p class="card-category">Em tempo real</p> -->
 
                 <div class="div_btn_grafico">
-                  <button id="grafico_ag1" class="btn_grafico" style="background-color: #daa5207a; font-size: 14px; height: 30px; width: 110px; border: #6b6d70 solid 1px;
-                  border-radius: 15px;" onclick="Todos()">Temperatura</button>
-                  <button id="grafico_ag1" class="btn_grafico" style="background-color: #577aa1a3; font-size: 14px; height: 30px; width: 110px; border: #6b6d70 solid 1px;
-                  border-radius: 15px;" onclick="Todos()">Processador</button>
+                  <button id="grafico_ag1" class="btn_grafico" style="background-color: #daa5207a; font-size: 14px; height: 30px; width: 110px; border-radius: 15px; margin-left: 50px;" onclick="Todos()">Temperatura</button>
+                  <button id="grafico_ag1" class="btn_grafico" style="background-color: #577aa1a3; font-size: 14px; height: 30px; width: 110px; border-radius: 15px; margin-left: 30px;" onclick="Todos()">Processador</button>
                 </div>
 
               </div>
@@ -315,15 +299,15 @@ Coded by www.creative-tim.com
                 <tbody>
                   <tr>
                     <th scope="row">Temperatura</th>
-                    <td>-20mb</td>
-                    <td>20mb - 50mb</td>
-                    <td>+50mb</td>
+                    <td>60°</td>
+                    <td>85°</td>
+                    <td>95°</td>
                   </tr>
                   <tr>
                     <th scope="row">Processador</th>
-                    <td>-50mb</td>
-                    <td>50mb - 150mb</td>
-                    <td>+150mb</td>
+                    <td>75%</td>
+                    <td>80%</td>
+                    <td>90%</td>
                   </tr>
                 </tbody>
               </table>
@@ -555,7 +539,7 @@ function obterDados(){
 
             setInterval(() => {
               atualizarGraficos()
-            }, 3000)
+            }, 11000)
           })
 
 
@@ -631,7 +615,7 @@ function obterDados(){
 
             // Alerta CPU
 
-            if (metricaCPU > 40 && metricaCPU < 70) {
+            if (metricaCPU > 50 && metricaCPU < 80) {
               metrica = metricaCPU
               componente = "Uso do processador"
               frase = "O uso do processador está alto"
@@ -640,7 +624,7 @@ function obterDados(){
 
               alertas(nomeFunc, emailFunc, metrica, componente, frase)
 
-            } else if (metricaCPU >= 40) {
+            } else if (metricaCPU >= 85) {
               metrica = metricaCPU
               componente = "Uso do processador"
               frase = "O uso do processador em estado crítico"
@@ -651,7 +635,7 @@ function obterDados(){
             }
 
 
-            if (metricaTemp > 40 && metricaTemp < 80) {
+            if (metricaTemp > 70 && metricaTemp < 80) {
               metrica = metricaTemp
               componente = "Temperatura"
               frase = "A temperatura do processador está em estado de alerta"
@@ -660,10 +644,10 @@ function obterDados(){
 
               alertas(nomeFunc, emailFunc, metrica, componente, frase)
 
-            } else if (metricaTemp >= 80) {
+            } else if (metricaTemp >= 90) {
               metrica = metricaTemp
               componente = "Temperatura"
-              frase = "A temperatura está em estado crítico"
+              frase = "A temperatura está em estado crítico, os coolers não estão consegindo dissipar o calor"
 
               critico_temperatura.classList.add('show');
 

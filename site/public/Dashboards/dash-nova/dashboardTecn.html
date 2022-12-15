@@ -57,25 +57,25 @@ Coded by www.creative-tim.com
           <li>
             <a href="dashboardIsa.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Isabela Hantke</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Armazenamento Disco</p>
             </a>
           </li>
           <li>
             <a href="../dash-nova/dashboard_vms.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Rafaela Dias</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Memória RAM</p>
             </a>
           </li>
           <li>
             <a href="../dash-nova/dashboardVitor.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Vitor Macauba</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Velocidade Internet</p>
             </a>
           </li>
           <li>
             <a href="../dash-nova/dashboardVe.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Verônica Zibordi</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Temperatura</p>
             </a>
           </li>
           <li>
@@ -105,7 +105,7 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand">Gráficos</a>
+            <a class="navbar-brand">Gráficos Gerais (Tempo Real)</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
             aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -156,7 +156,7 @@ Coded by www.creative-tim.com
                 </div>
 
                 <div class="div_btn_grafico">
-                  <button id="grafico_ag1" class="btn_grafico" onclick="Todos()">Todos</button>
+                  <button id="grafico_ag1" style="background-color: lightgray;" class="btn_grafico" onclick="Todos()">Todos</button>
                   <span style="padding:0 0 0 8px;"><button style="background-color: #6bd098;" id="grafico_ag2" \
                       class="btn_grafico" onclick="CPU()">CPU</button></span>
                   <span style="padding:0 8px 0 8px;"><button style="background-color: #fcc468;" id="grafico_ag3"
@@ -165,8 +165,8 @@ Coded by www.creative-tim.com
                       class="btn_grafico" onclick="Disco()">Disco</button></span>
                 </div>
 
-                <h5 class="card-title">Servidor Geral </h5>
-                <p class="card-category">Em tempo real</p>
+                <!-- <h5 class="card-title">Servidor Geral </h5>
+                <p class="card-category">Em tempo real</p> -->
 
               </div>
               <div class="card-body ">
@@ -270,21 +270,21 @@ Coded by www.creative-tim.com
                 <tbody>
                   <tr>
                     <th scope="row">CPU</th>
-                    <td>35%</td>
-                    <td>56%</td>
-                    <td>75%</td>
+                    <td>-55%</td>
+                    <td>55% a 75%</td>
+                    <td>+75%</td>
                   </tr>
                   <tr>
                     <th scope="row">RAM</th>
-                    <td>45%</td>
-                    <td>66%</td>
-                    <td>80%</td>
+                    <td>-65%</td>
+                    <td>65% a 80%</td>
+                    <td>+70%</td>
                   </tr>
                   <tr>
                     <th scope="row">Disco</th>
-                    <td>40%</td>
-                    <td>56%</td>
-                    <td>75%</td>
+                    <td>-55%</td>
+                    <td>55% a 75%</td>
+                    <td>+75%</td>
                   </tr>
                 </tbody>
               </table>
@@ -851,7 +851,7 @@ Coded by www.creative-tim.com
             graficoDisco = demo.ChartsDisco(data_reverse);
             setInterval(() => {
               atualizarGraficos()
-            }, 6000)
+            }, 11000)
           })
 
 

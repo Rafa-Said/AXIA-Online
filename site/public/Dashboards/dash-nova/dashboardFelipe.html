@@ -64,7 +64,7 @@ Coded by www.creative-tim.com
           <li class="active">
             <a href="../dash-nova/dashboardFelipe.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Felipe Pires</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Uso do servidor</p>
             </a>
           </li>
           <li>
@@ -94,7 +94,7 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand">Servidor</a>
+            <a class="navbar-brand">Servidor (Tempo Real)</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
             aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -148,7 +148,7 @@ Coded by www.creative-tim.com
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  Média recomendada do servidor
+                  Média de uso do servidor
                 </div>
               </div>
             </div>
@@ -174,7 +174,7 @@ Coded by www.creative-tim.com
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  Média recomendada do servidor
+                  Média de uso do servidor
                 </div>
               </div>
             </div>
@@ -199,7 +199,7 @@ Coded by www.creative-tim.com
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  Média recomendada do servidor
+                  Média de uso do servidor
                 </div>
               </div>
             </div>
@@ -211,26 +211,26 @@ Coded by www.creative-tim.com
                   <div class="col-5 col-md-4">
                     <div class="icon-big text-center icon-warning">
                       <i class="nc-icon nc-spaceship text-primary"></i>
-                      <b>SC</b>
+                      <b style="font-size: 35px;">SC</b>
                     </div>
                   </div>
 
 
 
                   <div class="col-7 col-md-8">
-                    <p style="margin-top: 25px;">Manhã</p>
+                    <p style="margin-top: 12px;">Manhã</p>
                     <div class="slider">
                       <input id="manha" type="range" max="100" value="100" oninput="rangeValue.innerText = this.value">
                       <p id="rangeValue" style="font-size: 20px; margin-top: 15px; ">100</p><b
                         style="font-size: 16px;">%</b>
                     </div>
-                    <p style="margin-top: 35px;">Tarde</p>
+                    <p style="margin-top: 18px;">Tarde</p>
                     <div class="slider2">
                       <input id="tarde" type="range" max="100" value="100" oninput="rangeValue2.innerText = this.value">
                       <p id="rangeValue2" style="font-size: 20px; margin-top: 15px; ">100</p><b
                         style="font-size: 16px;">%</b>
                     </div>
-                    <p style="margin-top: 35px;">Noite</p>
+                    <p style="margin-top: 18px;">Noite</p>
                     <div class="slider3">
                       <input id="noite" type="range" max="100" value="100" oninput="rangeValue3.innerText = this.value">
                       <p id="rangeValue3" style="font-size: 20px; margin-top: 15px; ">100</p><b
@@ -258,11 +258,11 @@ Coded by www.creative-tim.com
                     style="display: inline;">Histórico</button>
                   <button id="id_hist2" onclick="hist2()" class="btn_Projeto_FP"
                     style="display: none;">Gráficos</button>
-                  <input class="in_calendario" type="date" min="2022-01-01" max="2022-12-07" id="date"
-                    value="2022-12-07" required style="display: none;">
+                  <input class="in_calendario" type="date" min="2022-01-01" max="2022-12-12" id="date"
+                    value="2022-12-12" required style="display: none;">
                 </div>
-                <h5 class="card-title">Servidor</h5>
-                <p class="card-category">Capacidade de uso</p>
+                <!-- <h5 class="card-title">Servidor</h5>
+                <p class="card-category">Capacidade de uso</p> -->
 
               </div>
               <div class="card-body ">
@@ -279,9 +279,9 @@ Coded by www.creative-tim.com
                     <tbody>
                       <tr>
                         <th scope="row">Chamados</th>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>2</td>
                       </tr>
                       <tr>
                         <th scope="row">Média (Uso)</th>
@@ -313,7 +313,7 @@ Coded by www.creative-tim.com
               <div id="card_footer" class="card-footer" style="display: none;">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-history"></i> Atualizado em 07/12/2022
+                  <i class="fa fa-history"></i> Atualizado em 12/12/2022
                 </div>
               </div>
             </div>
@@ -323,7 +323,7 @@ Coded by www.creative-tim.com
 
       <!-- Alerta -->
       <div class="modal-containerD" id="Metrica_Alerta">
-        <div class="modalID_metricas" style="height: 10rem;">
+        <div class="modalID_metricas" style="height: 12rem;">
 
           <div class="login-content">
             <br> <br>
@@ -351,7 +351,7 @@ Coded by www.creative-tim.com
             <br> <br>
             <div class="formLogin">
               <div class="escrita-metrica">
-                <h2 style="margin: 0; color: yellow;">Alerta</h2>
+                <h2 style="margin: 0; color: red;">Crítico</h2>
               </div>
               <p style="font-size: 18px; margin: 0; padding-top: 20px; color:#fff;">O servidor atingiu o limite
                 informado</p>
@@ -1094,7 +1094,7 @@ Coded by www.creative-tim.com
           let frase
           let componente
 
-          const modal_container_alerta = document.getElementById('Metrica_alerta');
+          const modal_container_alerta = document.getElementById('Metrica_Alerta');
           const modal_container_critico = document.getElementById('Metrica_Critico');
           const closeMUAlerta = document.getElementById('closeMUAlerta');
           const closeMUCritico = document.getElementById('closeMUCritico');
@@ -1112,25 +1112,19 @@ Coded by www.creative-tim.com
 
           // Alerta CPU
 
-          // if (metricaCPU >= capacidadeMax - 5) {
-          //   metrica = metricaCPU
-          //   componente = "Servidor"
-          //   frase = "O servidor está quase atingindo o limite informado."
-
-          //   // modal_container_alerta.classList.add('show');
-
-          //   alertas(nomeFunc, emailFunc, metrica, componente, frase)
-          // } else 
-          if (metricaCPU >= capacidadeMax) {
+          if (metricaCPU >= capacidadeMax - 10) {
             metrica = metricaCPU
             componente = "Servidor"
-            frase = "O servidor atingiu o limite informado."
-
-            modal_container_critico.classList.add('show');
-
+            if (metrica >= capacidadeMax) {
+              frase = "O servidor atingiu o limite informado."
+              modal_container_critico.classList.add('show');
+            } else {
+              frase = "O servidor está quase atingindo o limite informado."
+              modal_container_alerta.classList.add('show');
+            }
+            
             alertas(nomeFunc, emailFunc, metrica, componente, frase)
-          }
-
+          } 
 
         })
 

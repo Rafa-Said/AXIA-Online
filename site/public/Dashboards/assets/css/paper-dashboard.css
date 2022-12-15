@@ -4262,7 +4262,7 @@ License - nucleoapp.com/license/
 
 .btn_grafico{
   width: 10%;
-  border: #6b6d70 solid 1px;
+  /* border: #6b6d70 solid 1px; */
   border-radius: 15px;
 }
 
@@ -4324,7 +4324,7 @@ License - nucleoapp.com/license/
 }
 
 .modalID_metricas{
-  background-color: #a19f9f;
+  background-color: #cacaca;
   padding: 30px 40px;
   border-radius: 15px;
   box-shadow: 1px 1px 8px #252525;

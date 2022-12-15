@@ -250,7 +250,7 @@ function buscarTorre2Total(req, res){
 // ROTAS- INDIVIDUAL VERÔNICA
 function buscarsktTemp(req, res) {
 
-    const limite_linhas = 5;
+    const limite_linhas = 15;
 
     var idAquario = req.params.idAquario;
     

@@ -45,26 +45,26 @@
           <li>
             <a href="dashboardIsa.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Isabela Hantke</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Armazenamento Disco</p>
             </a>
           </li>
           <li>
             <a href="../dash-nova/dashboard_vms.html">
               <!-- Adicionei apenas o caminho para ter ligação entre as páginas -->
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Rafaela Dias</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Memória RAM</p>
             </a>
           </li>
           <li class="active">
             <a href="../dash-nova/dashboardVitor.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Vitor Macauba</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Velocidade Internet</p>
             </a>
           </li>
           <li>
             <a href="../dash-nova/dashboardVe.html">
               <!-- <i class="nc-icon nc-settings"></i> -->
-              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Verônica Zibordi</p>
+              <p><img src="../assets/img/dash.png" alt="dash" width="30" height="30"> Temperatura</p>
             </a>
           </li>
           <li>
@@ -94,7 +94,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand"> Gráfico - Bytes enviados e recebidos (em MB)</a>
+            <a class="navbar-brand"> Gráficos Bytes enviados e recebidos (Tempo Real)</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
             aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -129,11 +129,16 @@
       <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <div class="card">
+            <div class="card box_card1">
               <div class="card-header ">
                 <div class="text-right">
+                  <button class= "btn_grafico" style="width: 150px; background-color: #5692d8b5; color: #ffffff;" onclick="testarVelocidade()">Teste de velocidade</button>
                   <button id="open-modal-metrica" class="btn_metrica">i</button>
                 </div>
+              </div>
+              <div class="div_btn_grafico">
+                <button style="background-color: #cd9a0e; color: #ffffff; width: 130px; height: 25px; margin-left: 60px; border-radius: 15px;">Bytes Rec. (MB)</button>
+                <button style="background-color: #000091; color:#ffffff; width: 130px; height: 25px; border-radius: 15px;">Bytes Env. (MB)</button>
               </div>
               <div class="card-body">
                 <canvas id=chartBytes width="400" height="100"></canvas>
@@ -143,23 +148,18 @@
         </div>
       </div>
 
-      <!-- <div class="content">
+      <div id="div_speedTeste" class="content" style="display: none; margin-top: 10px;">
         <div class="row">
           <div class="col-md-12">
-            <div class="card">
+            <div class="card box_card2">
               <div class="card-body" style="height: 660px;">
-                <div style="align-items: center;">
-                  <iframe frameborder='0' height='640px' scrolling='no'
-                    src='https://www.testeavelocidade.net/speedtest-claro/' width='100%'><br />
-                    <a href='https://www.testeavelocidade.net' rel='noopener'
-                      style='text-decoration:none;font-size: 14px;font-weight: 600;' target='_blank'>Teste de
-                      Velocidade são disponibilizados gratuitamente.</a>
+                <div id="iframeVelocidade" style="align-items: center;">
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
 
       <!--Alerta Recebido-->
       <div class="modal-containerD" id="Metrica_Alerta_Recebido">
@@ -270,13 +270,13 @@
                   <tr>
                     <th scope="row">Bytes Env.</th>
                     <td>-20mb</td>
-                    <td>20mb - 50mb</td>
+                    <td>20mb a 50mb</td>
                     <td>+50mb</td>
                   </tr>
                   <tr>
                     <th scope="row">Bytes Rec.</th>
                     <td>-50mb</td>
-                    <td>50mb - 150mb</td>
+                    <td>50mb a 150mb</td>
                     <td>+150mb</td>
                   </tr>
                 </tbody>
@@ -545,7 +545,7 @@
             let estadoBytesRec = document.getElementById('estado_BytesRec');
 
             // Alertas BytesEnv
-            if (estadoBytesEnv > 20.00 && estadoBytesEnv <= 50.00) {
+            if (metricaBytesEnv > 20.00 && metricaBytesEnv <= 50.00) {
               metrica = metricaBytesEnv
               componente = "Bytes Enviados"
               frase = "Vitor, a internet está em estado de alerta (Bytes Env)"
@@ -554,7 +554,7 @@
 
               alertas(nomeFunc, emailFunc, metrica, componente, frase)
 
-            } else if (estadoBytesEnv > 50.00) {
+            } else if (metricaBytesEnv > 50.00) {
               metrica = metricaBytesEnv
               componente = "Bytes Enviados"
               frase = "Vitor, a internet está em estado crítico (Bytes Env)"
@@ -565,7 +565,7 @@
             }
 
             // Alertas BytesRec
-            if (estadoBytesRec > 50.00 && estadoBytesRec <= 150.00) {
+            if (metricaBytesRec > 50.00 && metricaBytesRec <= 150.00) {
               metrica = metricaBytesRec
               componente = "Bytes Recebidos"
               frase = "Vitor, a internet está em estado de alerta (Bytes Rec)"
@@ -574,7 +574,7 @@
 
               alertas(nomeFunc, emailFunc, metrica, componente, frase)
 
-            } else if (estadoBytesRec > 150.00) {
+            } else if (metricaBytesRec > 150.00) {
               metrica = metricaBytesRec
               componente = "Bytes Recebidos"
               frase = "Vitor, a internet está em estado crítico (Bytes Rec)"
@@ -671,4 +671,11 @@
     input.addEventListener("focus", addcl);
     input.addEventListener("blur", remcl);
   });
+
+  function testarVelocidade() {
+
+    div_speedTeste.style.display = 'block'
+
+    document.getElementById('iframeVelocidade').innerHTML = "<iframe id='iframeVelocidade' frameborder='0' height='640px' scrolling='no' src='https://www.testeavelocidade.net/speedtest-claro/' width='100%'><br /><a href='https://www.testeavelocidade.net' rel='noopener' style='text-decoration:none;font-size: 14px;font-weight: 600;' target='_blank'>Teste de Velocidade são disponibilizados gratuitamente.</a>"
+  }
 </script>
